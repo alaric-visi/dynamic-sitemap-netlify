@@ -1,0 +1,15 @@
+[build]
+  publish   = "."
+  functions = "netlify/functions"
+
+[functions."sitemap"]
+  included_files = [
+    "*.html",
+    "posts/**/*.html",
+  ]
+
+[[redirects]]
+  from   = "/sitemap.xml"
+  to     = "/.netlify/functions/sitemap"
+  status = 200
+  force  = true
